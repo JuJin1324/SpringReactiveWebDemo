@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: dev
+logging:
+  level:
+    root: DEBUG
+server:
+  port: 8080
+
+### For webClient
+web:
+  server:
+    ip: 'localhost'
+    port: ${server.port}
+
+---
+spring:
+  profiles: prod
+  logging:
+    level:
+      root: INFO
